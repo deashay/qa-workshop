@@ -11,8 +11,9 @@ FactoryGirl.define do
 
     before(:create) do |book, evaluator|
       if evaluator.book_category_name
-        create :book_category, name: evaluator.book_category_name
-        book.book_category = category
+        book.book_category = create :book_category, name: evaluator.book_category_name
+      else
+        book.book_category = create :book_category
       end
     end
   end
