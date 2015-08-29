@@ -9,12 +9,14 @@ require 'capybara-screenshot/rspec'
 require 'capybara/poltergeist'
 require 'database_cleaner'
 require 'site_prism'
+require 'factory_girl'
 
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   config.infer_spec_type_from_file_location!
