@@ -44,6 +44,7 @@ group :development, :test do
   gem 'spring'
   gem 'guard-livereload', '~> 2.4', require: false
   gem 'rack-livereload'
+  gem 'ffaker'
 end
 
 group :test do
@@ -53,4 +54,5 @@ group :test do
   gem 'database_cleaner'
   gem 'poltergeist'
   gem 'selenium-webdriver'
+  gem 'site_prism'
 end
